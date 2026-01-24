@@ -73,7 +73,6 @@ The backend runs on `http://localhost:4000` and the frontend runs on the Vite de
 - Debela Berako
 - Abdulwahid Hussen
 
-
 ## 9. License
 
 Academic use only.
