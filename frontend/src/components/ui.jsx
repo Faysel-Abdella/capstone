@@ -23,16 +23,20 @@ export const Section = ({ id, eyebrow, title, subtitle, children }) => (
   </section>
 );
 
-export const MetricCard = ({ label, value, note }) => (
-  <div className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-lg">
+export const MetricCard = ({ label, value, note, className = "" }) => (
+  <div
+    className={`rounded-2xl border border-white/10 bg-white/5 p-5 shadow-lg ${className}`}
+  >
     <p className="text-sm text-slate-400">{label}</p>
     <p className="mt-3 text-3xl font-semibold text-white">{value}</p>
     {note && <p className="mt-2 text-xs text-slate-400">{note}</p>}
   </div>
 );
 
-export const FeatureCard = ({ title, description, icon }) => (
-  <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">
+export const FeatureCard = ({ title, description, icon, className = "" }) => (
+  <div
+    className={`rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg ${className}`}
+  >
     <div className="flex items-center gap-3">
       <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-500/20 text-xl">
         {icon}
@@ -43,16 +47,26 @@ export const FeatureCard = ({ title, description, icon }) => (
   </div>
 );
 
-export const Pill = ({ children }) => (
-  <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold text-slate-200">
+export const Pill = ({ children, className = "" }) => (
+  <span
+    className={`rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold text-slate-200 ${className}`}
+  >
     {children}
   </span>
 );
 
-export const Table = ({ columns, data }) => (
-  <div className="overflow-hidden rounded-2xl border border-white/10">
+export const Table = ({
+  columns,
+  data,
+  className = "",
+  headerClassName = "",
+  bodyClassName = "",
+}) => (
+  <div
+    className={`overflow-hidden rounded-2xl border border-white/10 ${className}`}
+  >
     <table className="min-w-full divide-y divide-white/10">
-      <thead className="bg-white/5">
+      <thead className={`bg-white/5 ${headerClassName}`}>
         <tr>
           {columns.map((column) => (
             <th
@@ -64,7 +78,9 @@ export const Table = ({ columns, data }) => (
           ))}
         </tr>
       </thead>
-      <tbody className="divide-y divide-white/5 bg-slate-950/40">
+      <tbody
+        className={`divide-y divide-white/5 bg-slate-950/40 ${bodyClassName}`}
+      >
         {data.map((row) => (
           <tr key={row.id} className="text-sm text-slate-200">
             {Object.values(row.cells).map((value, index) => (
@@ -79,8 +95,16 @@ export const Table = ({ columns, data }) => (
   </div>
 );
 
-export const ChartCard = ({ title, subtitle, children, badge }) => (
-  <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+export const ChartCard = ({
+  title,
+  subtitle,
+  children,
+  badge,
+  className = "",
+}) => (
+  <div
+    className={`rounded-2xl border border-white/10 bg-white/5 p-6 ${className}`}
+  >
     <div className="flex items-center justify-between">
       <div>
         <h3 className="text-lg font-semibold text-white">{title}</h3>
