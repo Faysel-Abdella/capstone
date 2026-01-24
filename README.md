@@ -65,7 +65,7 @@ The backend runs on `http://localhost:4000` and the frontend runs on the Vite de
 
 ## 8. Team Members
 
-- [Name] — Project Lead, System Architecture
+- Fasil Hawultie — Project Lead, System Architecture
 - [Name] — Backend Development, Real-time Services
 - [Name] — Frontend Development, UI/UX
 - [Name] — Research & Evaluation, Documentation
