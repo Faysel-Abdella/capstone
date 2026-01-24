@@ -23,13 +23,21 @@ export const Section = ({ id, eyebrow, title, subtitle, children }) => (
   </section>
 );
 
-export const MetricCard = ({ label, value, note, className = "" }) => (
+export const MetricCard = ({
+  label,
+  value,
+  note,
+  className = "",
+  labelClassName = "text-slate-400",
+  valueClassName = "text-white",
+  noteClassName = "text-slate-400",
+}) => (
   <div
     className={`rounded-2xl border border-white/10 bg-white/5 p-5 shadow-lg ${className}`}
   >
-    <p className="text-sm text-slate-400">{label}</p>
-    <p className="mt-3 text-3xl font-semibold text-white">{value}</p>
-    {note && <p className="mt-2 text-xs text-slate-400">{note}</p>}
+    <p className={`text-sm ${labelClassName}`}>{label}</p>
+    <p className={`mt-3 text-3xl font-semibold ${valueClassName}`}>{value}</p>
+    {note && <p className={`mt-2 text-xs ${noteClassName}`}>{note}</p>}
   </div>
 );
 
@@ -101,14 +109,18 @@ export const ChartCard = ({
   children,
   badge,
   className = "",
+  titleClassName = "text-white",
+  subtitleClassName = "text-slate-400",
 }) => (
   <div
     className={`rounded-2xl border border-white/10 bg-white/5 p-6 ${className}`}
   >
     <div className="flex items-center justify-between">
       <div>
-        <h3 className="text-lg font-semibold text-white">{title}</h3>
-        {subtitle && <p className="text-sm text-slate-400">{subtitle}</p>}
+        <h3 className={`text-lg font-semibold ${titleClassName}`}>{title}</h3>
+        {subtitle && (
+          <p className={`text-sm ${subtitleClassName}`}>{subtitle}</p>
+        )}
       </div>
       {badge && <Pill>{badge}</Pill>}
     </div>

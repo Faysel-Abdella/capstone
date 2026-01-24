@@ -41,47 +41,91 @@ const PerformanceAnalyticsPage = () => {
   return (
     <div className="space-y-6">
       <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-semibold text-slate-900">Performance Analytics</h2>
+        <h2 className="text-2xl font-semibold text-slate-900">
+          Performance Analytics
+        </h2>
         <p className="mt-2 text-sm text-slate-500">
-          Operational analytics guide staffing decisions and highlight bottlenecks. Data shown here is
-          simulated for demo purposes.
+          Operational analytics guide staffing decisions and highlight
+          bottlenecks. Data shown here is simulated for demo purposes.
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Pill className="border-slate-200 bg-slate-100 text-slate-600">Data-driven staffing</Pill>
-          <Pill className="border-slate-200 bg-slate-100 text-slate-600">SLA optimization</Pill>
+          <Pill className="border-slate-200 bg-slate-100 text-slate-600">
+            Data-driven staffing
+          </Pill>
+          <Pill className="border-slate-200 bg-slate-100 text-slate-600">
+            SLA optimization
+          </Pill>
         </div>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
-        <ChartCard title="Avg. Service Duration" subtitle="Minutes per service" className="bg-white border-slate-200">
+        <ChartCard
+          title="Avg. Service Duration"
+          subtitle="Minutes per service"
+          className="bg-white border-slate-200"
+          titleClassName="text-slate-900"
+          subtitleClassName="text-slate-500"
+        >
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data.serviceDuration}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
               <XAxis dataKey="name" stroke="#64748b" />
               <YAxis stroke="#64748b" />
-              <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0" }} />
+              <Tooltip
+                contentStyle={{
+                  background: "#ffffff",
+                  border: "1px solid #e2e8f0",
+                }}
+              />
               <Bar dataKey="value" fill="#0ea5e9" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </ChartCard>
-        <ChartCard title="Throughput" subtitle="Services completed per hour" className="bg-white border-slate-200">
+        <ChartCard
+          title="Throughput"
+          subtitle="Services completed per hour"
+          className="bg-white border-slate-200"
+          titleClassName="text-slate-900"
+          subtitleClassName="text-slate-500"
+        >
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data.throughput}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
               <XAxis dataKey="time" stroke="#64748b" />
               <YAxis stroke="#64748b" />
-              <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0" }} />
-              <Line type="monotone" dataKey="value" stroke="#22c55e" strokeWidth={2} />
+              <Tooltip
+                contentStyle={{
+                  background: "#ffffff",
+                  border: "1px solid #e2e8f0",
+                }}
+              />
+              <Line
+                type="monotone"
+                dataKey="value"
+                stroke="#22c55e"
+                strokeWidth={2}
+              />
             </LineChart>
           </ResponsiveContainer>
         </ChartCard>
-        <ChartCard title="Abandonment Rate" subtitle="Weekly no-show rate" className="bg-white border-slate-200">
+        <ChartCard
+          title="Abandonment Rate"
+          subtitle="Weekly no-show rate"
+          className="bg-white border-slate-200"
+          titleClassName="text-slate-900"
+          subtitleClassName="text-slate-500"
+        >
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data.abandonment}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
               <XAxis dataKey="week" stroke="#64748b" />
               <YAxis stroke="#64748b" />
-              <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0" }} />
+              <Tooltip
+                contentStyle={{
+                  background: "#ffffff",
+                  border: "1px solid #e2e8f0",
+                }}
+              />
               <Bar dataKey="value" fill="#f97316" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
@@ -90,16 +134,21 @@ const PerformanceAnalyticsPage = () => {
 
       <div className="grid gap-4 lg:grid-cols-2">
         <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h3 className="text-lg font-semibold text-slate-900">Observed Bottlenecks</h3>
+          <h3 className="text-lg font-semibold text-slate-900">
+            Observed Bottlenecks
+          </h3>
           <p className="mt-2 text-sm text-slate-500">
-            Document review services consistently exceed average duration, indicating the need for
-            additional staffing during peak hours.
+            Document review services consistently exceed average duration,
+            indicating the need for additional staffing during peak hours.
           </p>
         </div>
         <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h3 className="text-lg font-semibold text-slate-900">Staffing Recommendations</h3>
+          <h3 className="text-lg font-semibold text-slate-900">
+            Staffing Recommendations
+          </h3>
           <p className="mt-2 text-sm text-slate-500">
-            Schedule one additional desk between 10:00–14:00 to maintain SLA compliance.
+            Schedule one additional desk between 10:00–14:00 to maintain SLA
+            compliance.
           </p>
         </div>
       </div>

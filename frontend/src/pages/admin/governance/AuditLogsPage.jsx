@@ -3,10 +3,34 @@ import React, { useMemo } from "react";
 const AuditLogsPage = () => {
   const logs = useMemo(
     () => [
-      { id: "log-1", action: "Queue resumed", actor: "Supervisor", time: "10:42 AM", result: "Success" },
-      { id: "log-2", action: "Ticket served", actor: "Desk-02", time: "10:31 AM", result: "Success" },
-      { id: "log-3", action: "Manual override request", actor: "Desk-01", time: "10:05 AM", result: "Denied" },
-      { id: "log-4", action: "Configuration review", actor: "Admin", time: "Yesterday", result: "Logged" },
+      {
+        id: "log-1",
+        action: "Queue resumed",
+        actor: "Supervisor",
+        time: "10:42 AM",
+        result: "Success",
+      },
+      {
+        id: "log-2",
+        action: "Ticket served",
+        actor: "Desk-02",
+        time: "10:31 AM",
+        result: "Success",
+      },
+      {
+        id: "log-3",
+        action: "Manual override request",
+        actor: "Desk-01",
+        time: "10:05 AM",
+        result: "Denied",
+      },
+      {
+        id: "log-4",
+        action: "Configuration review",
+        actor: "Admin",
+        time: "Yesterday",
+        result: "Logged",
+      },
     ],
     [],
   );
@@ -16,7 +40,8 @@ const AuditLogsPage = () => {
       <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 className="text-2xl font-semibold text-slate-900">Audit Logs</h2>
         <p className="mt-2 text-sm text-slate-500">
-          Audit logs ensure transparency and accountability by recording every system action.
+          Audit logs ensure transparency and accountability by recording every
+          system action.
         </p>
       </div>
 
@@ -27,11 +52,17 @@ const AuditLogsPage = () => {
               <div className="mt-1 h-3 w-3 rounded-full bg-slate-900" />
               <div className="flex-1 rounded-xl border border-slate-200 bg-slate-50 p-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-sm font-semibold text-slate-800">{log.action}</p>
+                  <p className="text-sm font-semibold text-slate-800">
+                    {log.action}
+                  </p>
                   <span className="text-xs text-slate-500">{log.time}</span>
                 </div>
-                <p className="mt-2 text-xs text-slate-500">Actor: {log.actor}</p>
-                <p className="mt-1 text-xs text-slate-500">Result: {log.result}</p>
+                <p className="mt-2 text-xs text-slate-500">
+                  Actor: {log.actor}
+                </p>
+                <p className="mt-1 text-xs text-slate-500">
+                  Result: {log.result}
+                </p>
               </div>
             </div>
           ))}

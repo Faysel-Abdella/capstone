@@ -20,10 +20,12 @@ const RolesPermissionsPage = () => {
   return (
     <div className="space-y-6">
       <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-semibold text-slate-900">Roles & Permissions</h2>
+        <h2 className="text-2xl font-semibold text-slate-900">
+          Roles & Permissions
+        </h2>
         <p className="mt-2 text-sm text-slate-500">
-          Access policies are view-only in demo mode. This matrix reflects enterprise-grade governance
-          for queue operations.
+          Access policies are view-only in demo mode. This matrix reflects
+          enterprise-grade governance for queue operations.
         </p>
       </div>
 
@@ -47,7 +49,9 @@ const RolesPermissionsPage = () => {
           <tbody className="divide-y divide-slate-200">
             {permissions.map((permission, index) => (
               <tr key={permission} className="text-sm text-slate-700">
-                <td className="px-4 py-4 font-semibold text-slate-900">{permission}</td>
+                <td className="px-4 py-4 font-semibold text-slate-900">
+                  {permission}
+                </td>
                 {roles.map((role) => (
                   <td key={`${role}-${permission}`} className="px-4 py-4">
                     {accessMatrix[role][index] ? "Granted" : "Restricted"}

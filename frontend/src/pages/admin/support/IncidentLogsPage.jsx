@@ -33,23 +33,34 @@ const IncidentLogsPage = () => {
       <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 className="text-2xl font-semibold text-slate-900">Incident Logs</h2>
         <p className="mt-2 text-sm text-slate-500">
-          Incident tracking captures service disruptions and root-cause analysis to protect service
-          reliability.
+          Incident tracking captures service disruptions and root-cause analysis
+          to protect service reliability.
         </p>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
         {incidents.map((incident) => (
-          <div key={incident.id} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div
+            key={incident.id}
+            className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+          >
             <div className="flex items-center justify-between">
-              <p className="text-xs font-semibold text-slate-400">{incident.id}</p>
+              <p className="text-xs font-semibold text-slate-400">
+                {incident.id}
+              </p>
               <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
                 {incident.impact} impact
               </span>
             </div>
-            <p className="mt-3 text-sm font-semibold text-slate-900">{incident.summary}</p>
-            <p className="mt-2 text-xs text-slate-500">Status: {incident.status}</p>
-            <p className="mt-2 text-xs text-slate-500">Resolution: {incident.resolvedAt}</p>
+            <p className="mt-3 text-sm font-semibold text-slate-900">
+              {incident.summary}
+            </p>
+            <p className="mt-2 text-xs text-slate-500">
+              Status: {incident.status}
+            </p>
+            <p className="mt-2 text-xs text-slate-500">
+              Resolution: {incident.resolvedAt}
+            </p>
           </div>
         ))}
       </div>

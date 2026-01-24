@@ -7,7 +7,8 @@ const SystemHealthPage = () => {
       <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 className="text-2xl font-semibold text-slate-900">System Health</h2>
         <p className="mt-2 text-sm text-slate-500">
-          Status indicators summarize infrastructure health and real-time connectivity.
+          Status indicators summarize infrastructure health and real-time
+          connectivity.
         </p>
       </div>
 
@@ -15,7 +16,9 @@ const SystemHealthPage = () => {
         <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
           <div className="flex items-center gap-2 text-slate-600">
             <Activity size={18} />
-            <span className="text-xs uppercase tracking-[0.2em]">Queue Engine</span>
+            <span className="text-xs uppercase tracking-[0.2em]">
+              Queue Engine
+            </span>
           </div>
           <p className="mt-3 text-2xl font-semibold text-slate-900">Stable</p>
           <p className="mt-2 text-sm text-slate-500">Latency 120ms</p>
@@ -31,9 +34,13 @@ const SystemHealthPage = () => {
         <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
           <div className="flex items-center gap-2 text-slate-600">
             <Wifi size={18} />
-            <span className="text-xs uppercase tracking-[0.2em]">WebSocket</span>
+            <span className="text-xs uppercase tracking-[0.2em]">
+              WebSocket
+            </span>
           </div>
-          <p className="mt-3 text-2xl font-semibold text-slate-900">Connected</p>
+          <p className="mt-3 text-2xl font-semibold text-slate-900">
+            Connected
+          </p>
           <p className="mt-2 text-sm text-slate-500">Clients: 146</p>
         </div>
       </div>

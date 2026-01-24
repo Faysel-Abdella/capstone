@@ -30,14 +30,20 @@ const DemandPatternsPage = () => {
   return (
     <div className="space-y-6">
       <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-semibold text-slate-900">Demand Patterns</h2>
+        <h2 className="text-2xl font-semibold text-slate-900">
+          Demand Patterns
+        </h2>
         <p className="mt-2 text-sm text-slate-500">
-          Heatmap visualization highlights peak hours and days. This supports demand forecasting and
-          operational planning.
+          Heatmap visualization highlights peak hours and days. This supports
+          demand forecasting and operational planning.
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Pill className="border-slate-200 bg-slate-100 text-slate-600">Peak hours</Pill>
-          <Pill className="border-slate-200 bg-slate-100 text-slate-600">Weekly seasonality</Pill>
+          <Pill className="border-slate-200 bg-slate-100 text-slate-600">
+            Peak hours
+          </Pill>
+          <Pill className="border-slate-200 bg-slate-100 text-slate-600">
+            Weekly seasonality
+          </Pill>
         </div>
       </div>
 
@@ -51,7 +57,9 @@ const DemandPatternsPage = () => {
           ))}
           {heatmap.days.map((row) => (
             <React.Fragment key={row.day}>
-              <div className="text-sm font-semibold text-slate-700">{row.day}</div>
+              <div className="text-sm font-semibold text-slate-700">
+                {row.day}
+              </div>
               {row.values.map((value, index) => (
                 <div
                   key={`${row.day}-${index}`}

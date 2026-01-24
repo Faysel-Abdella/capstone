@@ -41,10 +41,12 @@ const SupportTicketsPage = () => {
   return (
     <div className="space-y-6">
       <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-semibold text-slate-900">Support Tickets</h2>
+        <h2 className="text-2xl font-semibold text-slate-900">
+          Support Tickets
+        </h2>
         <p className="mt-2 text-sm text-slate-500">
-          Support tickets capture service disruptions and customer concerns, improving reliability and
-          trust through transparent resolution.
+          Support tickets capture service disruptions and customer concerns,
+          improving reliability and trust through transparent resolution.
         </p>
       </div>
 
@@ -52,23 +54,31 @@ const SupportTicketsPage = () => {
         <table className="min-w-full divide-y divide-slate-200">
           <thead className="bg-slate-50">
             <tr>
-              {["Ticket ID", "Issue Type", "Reported By", "Priority", "Status", "Created"].map(
-                (column) => (
-                  <th
-                    key={column}
-                    className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
-                  >
-                    {column}
-                  </th>
-                ),
-              )}
+              {[
+                "Ticket ID",
+                "Issue Type",
+                "Reported By",
+                "Priority",
+                "Status",
+                "Created",
+              ].map((column) => (
+                <th
+                  key={column}
+                  className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
+                >
+                  {column}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200">
             {tickets.map((ticket) => (
               <tr key={ticket.id} className="text-sm text-slate-700">
                 <td className="px-4 py-4 font-semibold text-slate-900">
-                  <Link to={`/admin/support/tickets/${ticket.id}`} className="hover:text-slate-700">
+                  <Link
+                    to={`/admin/support/tickets/${ticket.id}`}
+                    className="hover:text-slate-700"
+                  >
                     {ticket.id}
                   </Link>
                 </td>
@@ -76,7 +86,9 @@ const SupportTicketsPage = () => {
                 <td className="px-4 py-4">{ticket.reporter}</td>
                 <td className="px-4 py-4">{ticket.priority}</td>
                 <td className="px-4 py-4">
-                  <span className={`rounded-full px-3 py-1 text-xs font-semibold ${statusBadge[ticket.status]}`}>
+                  <span
+                    className={`rounded-full px-3 py-1 text-xs font-semibold ${statusBadge[ticket.status]}`}
+                  >
                     {ticket.status}
                   </span>
                 </td>

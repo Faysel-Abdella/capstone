@@ -6,8 +6,6 @@ import {
   ChevronDown,
   ChevronRight,
   ClipboardList,
-  Cloud,
-  Database,
   Gauge,
   LayoutDashboard,
   ShieldCheck,
@@ -68,7 +66,10 @@ const AdminLayout = () => {
         items: [
           { label: "Configuration", to: "/admin/governance/configuration" },
           { label: "Audit Logs", to: "/admin/governance/audit-logs" },
-          { label: "Roles & Permissions", to: "/admin/governance/roles-permissions" },
+          {
+            label: "Roles & Permissions",
+            to: "/admin/governance/roles-permissions",
+          },
         ],
       },
       {
@@ -132,8 +133,12 @@ const AdminLayout = () => {
               </div>
               {!collapsed && (
                 <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Provider</p>
-                  <p className="text-sm font-semibold">Addis SME Service Center</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                    Provider
+                  </p>
+                  <p className="text-sm font-semibold">
+                    Addis SME Service Center
+                  </p>
                 </div>
               )}
             </div>
@@ -142,7 +147,11 @@ const AdminLayout = () => {
               className="rounded-lg border border-slate-200 p-2 text-slate-500 hover:text-slate-900"
               onClick={() => setCollapsed((prev) => !prev)}
             >
-              {collapsed ? <ChevronRight size={16} /> : <ChevronDown size={16} />}
+              {collapsed ? (
+                <ChevronRight size={16} />
+              ) : (
+                <ChevronDown size={16} />
+              )}
             </button>
           </div>
 
@@ -166,7 +175,12 @@ const AdminLayout = () => {
                       <SectionIcon size={16} />
                       {!collapsed && section.label}
                     </span>
-                    {!collapsed && (isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />)}
+                    {!collapsed &&
+                      (isOpen ? (
+                        <ChevronDown size={14} />
+                      ) : (
+                        <ChevronRight size={14} />
+                      ))}
                   </button>
                   {isOpen && (
                     <div className="space-y-1">
@@ -205,8 +219,12 @@ const AdminLayout = () => {
         <div className="flex flex-1 flex-col">
           <header className="flex items-center justify-between border-b border-slate-200 bg-white px-6 py-4 shadow-sm">
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Admin Console</p>
-              <h1 className="text-lg font-semibold">Werefa Operations & Governance</h1>
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
+                Admin Console
+              </p>
+              <h1 className="text-lg font-semibold">
+                Werefa Operations & Governance
+              </h1>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
@@ -231,10 +249,15 @@ const AdminLayout = () => {
             <div className="flex items-center gap-2">
               {breadcrumbs.map((crumb, index) => (
                 <React.Fragment key={crumb.path}>
-                  <Link to={crumb.path} className="font-medium text-slate-600 hover:text-slate-900">
+                  <Link
+                    to={crumb.path}
+                    className="font-medium text-slate-600 hover:text-slate-900"
+                  >
                     {crumb.label}
                   </Link>
-                  {index < breadcrumbs.length - 1 && <span className="text-slate-400">/</span>}
+                  {index < breadcrumbs.length - 1 && (
+                    <span className="text-slate-400">/</span>
+                  )}
                 </React.Fragment>
               ))}
             </div>
