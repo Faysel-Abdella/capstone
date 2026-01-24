@@ -33,11 +33,9 @@ const ServiceControlPage = () => {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-semibold text-slate-900">
-          Service Control
-        </h2>
-        <p className="mt-2 text-sm text-slate-500">
+      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-900/70 to-blue-950/70 p-6 shadow-lg shadow-slate-950/40">
+        <h2 className="text-2xl font-semibold text-white">Service Control</h2>
+        <p className="mt-2 text-sm text-slate-300">
           Service configurations are monitored by administrators to balance load
           and update expected service durations.
         </p>
@@ -47,25 +45,23 @@ const ServiceControlPage = () => {
         {services.map((service) => (
           <div
             key={service.id}
-            className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            className="rounded-2xl border border-white/10 bg-slate-950/70 p-5 shadow-lg shadow-slate-950/40"
           >
-            <h3 className="text-lg font-semibold text-slate-900">
-              {service.name}
-            </h3>
-            <p className="mt-2 text-sm text-slate-500">
+            <h3 className="text-lg font-semibold text-white">{service.name}</h3>
+            <p className="mt-2 text-sm text-slate-300">
               Avg. duration:{" "}
-              <span className="font-semibold text-slate-800">
+              <span className="font-semibold text-slate-100">
                 {service.duration}
               </span>
             </p>
-            <p className="mt-2 text-sm text-slate-500">
+            <p className="mt-2 text-sm text-slate-300">
               Queue load:{" "}
-              <span className="font-semibold text-slate-800">
+              <span className="font-semibold text-slate-100">
                 {service.load}
               </span>
             </p>
             <button
-              className="mt-4 rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-400"
+              className="mt-4 rounded-full border border-white/10 bg-slate-950/40 px-4 py-2 text-xs font-semibold text-slate-400"
               disabled
             >
               Edit service (demo)

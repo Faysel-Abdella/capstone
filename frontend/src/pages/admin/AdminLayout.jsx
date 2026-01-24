@@ -119,21 +119,21 @@ const AdminLayout = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-slate-100">
       <div className="flex min-h-screen">
         <aside
-          className={`flex flex-col border-r border-slate-200 bg-white shadow-sm transition-all duration-200 ${
+          className={`flex flex-col border-r border-white/10 bg-slate-950/80 shadow-lg shadow-slate-950/40 transition-all duration-200 ${
             collapsed ? "w-20" : "w-72"
           }`}
         >
           <div className="flex items-center justify-between px-5 py-6">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-sky-500/30 bg-slate-900/80 text-sky-100">
                 W
               </div>
               {!collapsed && (
                 <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                  <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
                     Provider
                   </p>
                   <p className="text-sm font-semibold">
@@ -144,7 +144,7 @@ const AdminLayout = () => {
             </div>
             <button
               type="button"
-              className="rounded-lg border border-slate-200 p-2 text-slate-500 hover:text-slate-900"
+              className="rounded-lg border border-white/10 p-2 text-slate-300 hover:bg-white/5 hover:text-white"
               onClick={() => setCollapsed((prev) => !prev)}
             >
               {collapsed ? (
@@ -169,7 +169,7 @@ const AdminLayout = () => {
                         [section.label]: !prev[section.label],
                       }))
                     }
-                    className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
+                    className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-slate-400"
                   >
                     <span className="flex items-center gap-2">
                       <SectionIcon size={16} />
@@ -191,8 +191,8 @@ const AdminLayout = () => {
                           className={({ isActive }) =>
                             `flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium ${
                               isActive
-                                ? "bg-slate-900 text-white"
-                                : "text-slate-600 hover:bg-slate-100"
+                                ? "bg-sky-500/20 text-white"
+                                : "text-slate-300 hover:bg-white/5"
                             }`
                           }
                         >
@@ -206,7 +206,7 @@ const AdminLayout = () => {
             })}
           </nav>
 
-          <div className="border-t border-slate-200 px-5 py-4 text-xs text-slate-500">
+          <div className="border-t border-white/10 px-5 py-4 text-xs text-slate-400">
             {!collapsed && (
               <div className="flex items-center gap-2">
                 <Activity size={14} />
@@ -217,7 +217,7 @@ const AdminLayout = () => {
         </aside>
 
         <div className="flex flex-1 flex-col">
-          <header className="flex items-center justify-between border-b border-slate-200 bg-white px-6 py-4 shadow-sm">
+          <header className="flex items-center justify-between border-b border-white/10 bg-slate-950/80 px-6 py-4 shadow-lg shadow-slate-950/40">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
                 Admin Console
@@ -227,16 +227,16 @@ const AdminLayout = () => {
               </h1>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
-                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              <div className="flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">
+                <span className="h-2 w-2 rounded-full bg-emerald-400" />
                 Online / Stable
               </div>
-              <button className="relative rounded-full border border-slate-200 p-2 text-slate-600 hover:text-slate-900">
+              <button className="relative rounded-full border border-white/10 p-2 text-slate-300 hover:text-white">
                 <Bell size={18} />
                 <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-rose-500" />
               </button>
               <div className="flex items-center gap-2">
-                <UserCircle size={28} className="text-slate-500" />
+                <UserCircle size={28} className="text-slate-300" />
                 <div className="text-sm">
                   <p className="font-semibold">Operations Lead</p>
                   <p className="text-xs text-slate-400">Admin Access</p>
@@ -245,13 +245,13 @@ const AdminLayout = () => {
             </div>
           </header>
 
-          <div className="border-b border-slate-200 bg-white px-6 py-3 text-sm text-slate-500">
+          <div className="border-b border-white/10 bg-slate-950/70 px-6 py-3 text-sm text-slate-400">
             <div className="flex items-center gap-2">
               {breadcrumbs.map((crumb, index) => (
                 <React.Fragment key={crumb.path}>
                   <Link
                     to={crumb.path}
-                    className="font-medium text-slate-600 hover:text-slate-900"
+                    className="font-medium text-slate-300 hover:text-white"
                   >
                     {crumb.label}
                   </Link>
@@ -263,7 +263,7 @@ const AdminLayout = () => {
             </div>
           </div>
 
-          <main className="flex-1 bg-slate-100 px-6 py-8">
+          <main className="flex-1 bg-gradient-to-b from-slate-950/60 via-slate-950/30 to-blue-950/40 px-6 py-8">
             {/* Nested routes map to enterprise modules; this reflects real-world information architecture. */}
             <Outlet />
           </main>

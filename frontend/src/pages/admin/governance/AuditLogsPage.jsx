@@ -37,30 +37,30 @@ const AuditLogsPage = () => {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-semibold text-slate-900">Audit Logs</h2>
-        <p className="mt-2 text-sm text-slate-500">
+      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-900/70 to-blue-950/70 p-6 shadow-lg shadow-slate-950/40">
+        <h2 className="text-2xl font-semibold text-white">Audit Logs</h2>
+        <p className="mt-2 text-sm text-slate-300">
           Audit logs ensure transparency and accountability by recording every
           system action.
         </p>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div className="rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-lg shadow-slate-950/40">
         <div className="space-y-4">
           {logs.map((log) => (
             <div key={log.id} className="flex items-start gap-4">
-              <div className="mt-1 h-3 w-3 rounded-full bg-slate-900" />
-              <div className="flex-1 rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div className="mt-1 h-3 w-3 rounded-full bg-sky-400/80" />
+              <div className="flex-1 rounded-xl border border-white/10 bg-slate-950/60 p-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-sm font-semibold text-slate-800">
+                  <p className="text-sm font-semibold text-white">
                     {log.action}
                   </p>
-                  <span className="text-xs text-slate-500">{log.time}</span>
+                  <span className="text-xs text-slate-400">{log.time}</span>
                 </div>
-                <p className="mt-2 text-xs text-slate-500">
+                <p className="mt-2 text-xs text-slate-400">
                   Actor: {log.actor}
                 </p>
-                <p className="mt-1 text-xs text-slate-500">
+                <p className="mt-1 text-xs text-slate-400">
                   Result: {log.result}
                 </p>
               </div>

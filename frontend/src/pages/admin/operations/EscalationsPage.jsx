@@ -30,18 +30,18 @@ const EscalationsPage = () => {
   );
 
   const priorityStyles = {
-    High: "bg-rose-50 text-rose-700",
-    Medium: "bg-amber-50 text-amber-700",
-    Low: "bg-slate-100 text-slate-600",
+    High: "bg-rose-500/15 text-rose-300",
+    Medium: "bg-amber-500/15 text-amber-300",
+    Low: "bg-slate-900/70 text-slate-200",
   };
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-semibold text-slate-900">
+      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-900/70 to-blue-950/70 p-6 shadow-lg shadow-slate-950/40">
+        <h2 className="text-2xl font-semibold text-white">
           Operational Escalations
         </h2>
-        <p className="mt-2 text-sm text-slate-500">
+        <p className="mt-2 text-sm text-slate-300">
           Escalations capture exceptions to normal queue flow. They are logged
           for audit and tracked to resolution.
         </p>
@@ -51,7 +51,7 @@ const EscalationsPage = () => {
         {cases.map((item) => (
           <div
             key={item.id}
-            className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            className="rounded-2xl border border-white/10 bg-slate-950/70 p-5 shadow-lg shadow-slate-950/40"
           >
             <div className="flex items-center justify-between">
               <p className="text-xs font-semibold text-slate-400">{item.id}</p>
@@ -61,11 +61,11 @@ const EscalationsPage = () => {
                 {item.priority}
               </span>
             </div>
-            <p className="mt-3 text-sm font-semibold text-slate-900">
+            <p className="mt-3 text-sm font-semibold text-white">
               {item.title}
             </p>
-            <p className="mt-2 text-xs text-slate-500">Owner: {item.owner}</p>
-            <div className="mt-4 flex items-center gap-2 text-xs text-slate-500">
+            <p className="mt-2 text-xs text-slate-300">Owner: {item.owner}</p>
+            <div className="mt-4 flex items-center gap-2 text-xs text-slate-300">
               <AlertTriangle size={14} /> Status: {item.status}
             </div>
           </div>

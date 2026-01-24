@@ -40,19 +40,19 @@ const PerformanceAnalyticsPage = () => {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-semibold text-slate-900">
+      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-900/70 to-blue-950/70 p-6 shadow-lg shadow-slate-950/40">
+        <h2 className="text-2xl font-semibold text-white">
           Performance Analytics
         </h2>
-        <p className="mt-2 text-sm text-slate-500">
+        <p className="mt-2 text-sm text-slate-300">
           Operational analytics guide staffing decisions and highlight
           bottlenecks. Data shown here is simulated for demo purposes.
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Pill className="border-slate-200 bg-slate-100 text-slate-600">
+          <Pill className="border-white/10 bg-slate-950/60 text-slate-200">
             Data-driven staffing
           </Pill>
-          <Pill className="border-slate-200 bg-slate-100 text-slate-600">
+          <Pill className="border-white/10 bg-slate-950/60 text-slate-200">
             SLA optimization
           </Pill>
         </div>
@@ -62,19 +62,19 @@ const PerformanceAnalyticsPage = () => {
         <ChartCard
           title="Avg. Service Duration"
           subtitle="Minutes per service"
-          className="bg-white border-slate-200"
-          titleClassName="text-slate-900"
-          subtitleClassName="text-slate-500"
+          className="border-white/10"
+          titleClassName="text-white"
+          subtitleClassName="text-slate-300"
         >
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data.serviceDuration}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="name" stroke="#64748b" />
-              <YAxis stroke="#64748b" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
+              <XAxis dataKey="name" stroke="#94a3b8" />
+              <YAxis stroke="#94a3b8" />
               <Tooltip
                 contentStyle={{
-                  background: "#ffffff",
-                  border: "1px solid #e2e8f0",
+                  background: "#0f172a",
+                  border: "1px solid #334155",
                 }}
               />
               <Bar dataKey="value" fill="#0ea5e9" radius={[6, 6, 0, 0]} />
@@ -84,19 +84,19 @@ const PerformanceAnalyticsPage = () => {
         <ChartCard
           title="Throughput"
           subtitle="Services completed per hour"
-          className="bg-white border-slate-200"
-          titleClassName="text-slate-900"
-          subtitleClassName="text-slate-500"
+          className="border-white/10"
+          titleClassName="text-white"
+          subtitleClassName="text-slate-300"
         >
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data.throughput}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="time" stroke="#64748b" />
-              <YAxis stroke="#64748b" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
+              <XAxis dataKey="time" stroke="#94a3b8" />
+              <YAxis stroke="#94a3b8" />
               <Tooltip
                 contentStyle={{
-                  background: "#ffffff",
-                  border: "1px solid #e2e8f0",
+                  background: "#0f172a",
+                  border: "1px solid #334155",
                 }}
               />
               <Line
@@ -111,19 +111,19 @@ const PerformanceAnalyticsPage = () => {
         <ChartCard
           title="Abandonment Rate"
           subtitle="Weekly no-show rate"
-          className="bg-white border-slate-200"
-          titleClassName="text-slate-900"
-          subtitleClassName="text-slate-500"
+          className="border-white/10"
+          titleClassName="text-white"
+          subtitleClassName="text-slate-300"
         >
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data.abandonment}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="week" stroke="#64748b" />
-              <YAxis stroke="#64748b" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
+              <XAxis dataKey="week" stroke="#94a3b8" />
+              <YAxis stroke="#94a3b8" />
               <Tooltip
                 contentStyle={{
-                  background: "#ffffff",
-                  border: "1px solid #e2e8f0",
+                  background: "#0f172a",
+                  border: "1px solid #334155",
                 }}
               />
               <Bar dataKey="value" fill="#f97316" radius={[6, 6, 0, 0]} />
@@ -133,20 +133,20 @@ const PerformanceAnalyticsPage = () => {
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h3 className="text-lg font-semibold text-slate-900">
+        <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5 shadow-lg shadow-slate-950/40">
+          <h3 className="text-lg font-semibold text-white">
             Observed Bottlenecks
           </h3>
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="mt-2 text-sm text-slate-300">
             Document review services consistently exceed average duration,
             indicating the need for additional staffing during peak hours.
           </p>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h3 className="text-lg font-semibold text-slate-900">
+        <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5 shadow-lg shadow-slate-950/40">
+          <h3 className="text-lg font-semibold text-white">
             Staffing Recommendations
           </h3>
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="mt-2 text-sm text-slate-300">
             Schedule one additional desk between 10:00–14:00 to maintain SLA
             compliance.
           </p>

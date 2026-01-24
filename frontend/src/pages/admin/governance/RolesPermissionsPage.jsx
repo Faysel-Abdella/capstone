@@ -19,37 +19,37 @@ const RolesPermissionsPage = () => {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-semibold text-slate-900">
+      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-900/70 to-blue-950/70 p-6 shadow-lg shadow-slate-950/40">
+        <h2 className="text-2xl font-semibold text-white">
           Roles & Permissions
         </h2>
-        <p className="mt-2 text-sm text-slate-500">
+        <p className="mt-2 text-sm text-slate-300">
           Access policies are view-only in demo mode. This matrix reflects
           enterprise-grade governance for queue operations.
         </p>
       </div>
 
-      <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-        <table className="min-w-full divide-y divide-slate-200">
-          <thead className="bg-slate-50">
+      <div className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 shadow-lg shadow-slate-950/40">
+        <table className="min-w-full divide-y divide-white/10">
+          <thead className="bg-slate-950/80">
             <tr>
-              <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
+              <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-300">
                 Permission
               </th>
               {roles.map((role) => (
                 <th
                   key={role}
-                  className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
+                  className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-300"
                 >
                   {role}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-200">
+          <tbody className="divide-y divide-white/10">
             {permissions.map((permission, index) => (
-              <tr key={permission} className="text-sm text-slate-700">
-                <td className="px-4 py-4 font-semibold text-slate-900">
+              <tr key={permission} className="text-sm text-slate-200">
+                <td className="px-4 py-4 font-semibold text-white">
                   {permission}
                 </td>
                 {roles.map((role) => (

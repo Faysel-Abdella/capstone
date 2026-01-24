@@ -33,7 +33,7 @@ export const MetricCard = ({
   noteClassName = "text-slate-400",
 }) => (
   <div
-    className={`rounded-2xl border border-white/10 bg-white/5 p-5 shadow-lg ${className}`}
+    className={`rounded-2xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-900/70 to-blue-950/70 p-5 shadow-lg shadow-slate-950/40 ${className}`}
   >
     <p className={`text-sm ${labelClassName}`}>{label}</p>
     <p className={`mt-3 text-3xl font-semibold ${valueClassName}`}>{value}</p>
@@ -43,7 +43,7 @@ export const MetricCard = ({
 
 export const FeatureCard = ({ title, description, icon, className = "" }) => (
   <div
-    className={`rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg ${className}`}
+    className={`rounded-2xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-900/70 to-blue-950/70 p-6 shadow-lg shadow-slate-950/40 ${className}`}
   >
     <div className="flex items-center gap-3">
       <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-500/20 text-xl">
@@ -57,7 +57,7 @@ export const FeatureCard = ({ title, description, icon, className = "" }) => (
 
 export const Pill = ({ children, className = "" }) => (
   <span
-    className={`rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold text-slate-200 ${className}`}
+    className={`rounded-full border border-white/10 bg-gradient-to-r from-slate-900/80 to-blue-900/70 px-3 py-1 text-xs font-semibold text-slate-200 ${className}`}
   >
     {children}
   </span>
@@ -74,7 +74,9 @@ export const Table = ({
     className={`overflow-hidden rounded-2xl border border-white/10 ${className}`}
   >
     <table className="min-w-full divide-y divide-white/10">
-      <thead className={`bg-white/5 ${headerClassName}`}>
+      <thead
+        className={`bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-blue-950/70 ${headerClassName}`}
+      >
         <tr>
           {columns.map((column) => (
             <th
@@ -87,7 +89,7 @@ export const Table = ({
         </tr>
       </thead>
       <tbody
-        className={`divide-y divide-white/5 bg-slate-950/40 ${bodyClassName}`}
+        className={`divide-y divide-white/5 bg-slate-950/70 ${bodyClassName}`}
       >
         {data.map((row) => (
           <tr key={row.id} className="text-sm text-slate-200">
@@ -113,7 +115,7 @@ export const ChartCard = ({
   subtitleClassName = "text-slate-400",
 }) => (
   <div
-    className={`rounded-2xl border border-white/10 bg-white/5 p-6 ${className}`}
+    className={`rounded-2xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-900/70 to-blue-950/70 p-6 shadow-lg shadow-slate-950/40 ${className}`}
   >
     <div className="flex items-center justify-between">
       <div>

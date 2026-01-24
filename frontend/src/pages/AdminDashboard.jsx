@@ -352,7 +352,7 @@ const AdminDashboard = () => {
             {data.services.map((service) => (
               <div
                 key={service.id}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6"
+                className="rounded-2xl border border-white/10 bg-slate-900/40 p-6"
               >
                 <h3 className="text-lg font-semibold">{service.name}</h3>
                 <p className="mt-2 text-sm text-slate-400">
@@ -377,7 +377,7 @@ const AdminDashboard = () => {
         return (
           <div className="space-y-6">
             <div className="grid gap-6 lg:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-6">
                 <p className="text-sm text-slate-400">Average Rating</p>
                 <p className="mt-4 text-4xl font-semibold">
                   {data.ratings.average}
@@ -386,7 +386,7 @@ const AdminDashboard = () => {
                   Verified transactions only
                 </p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-6">
                 <p className="text-sm text-slate-400">Trust Score</p>
                 <p className="mt-4 text-4xl font-semibold">
                   {data.ratings.trustScore}%
@@ -395,7 +395,7 @@ const AdminDashboard = () => {
                   Weighted by punctuality, ratings, and resolution logs.
                 </p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-6">
                 <p className="text-sm text-slate-400">Rating Integrity</p>
                 <p className="mt-4 text-sm text-slate-200">
                   Transaction-based ratings unlock after service completion,
@@ -403,7 +403,7 @@ const AdminDashboard = () => {
                 </p>
               </div>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-6">
               <h3 className="text-lg font-semibold">Recent Reviews</h3>
               <div className="mt-4 space-y-4">
                 {data.ratings.reviews.map((review) => (
@@ -424,7 +424,7 @@ const AdminDashboard = () => {
       case "System Configuration":
         return (
           <div className="space-y-6">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-6">
               <h3 className="text-lg font-semibold">Queue Enforcement</h3>
               <p className="mt-2 text-sm text-slate-300">
                 FIFO enforcement is configured at the queue engine level.
@@ -438,7 +438,7 @@ const AdminDashboard = () => {
                 <input type="checkbox" checked readOnly className="h-5 w-5" />
               </div>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-6">
               <h3 className="text-lg font-semibold">Notification Threshold</h3>
               <p className="mt-2 text-sm text-slate-300">
                 Notify customers when they are
@@ -453,7 +453,7 @@ const AdminDashboard = () => {
                 <Pill>System default</Pill>
               </div>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-6">
               <h3 className="text-lg font-semibold">Manual Override</h3>
               <p className="mt-2 text-sm text-slate-300">
                 Disabled in demo mode. Production requires supervisor
@@ -501,9 +501,9 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950/70">
+    <div className="min-h-screen bg-slate-950">
       <div className="flex min-h-screen">
-        <aside className="hidden w-64 flex-col border-r border-white/5 bg-slate-950/90 px-5 py-6 lg:flex">
+        <aside className="hidden w-64 flex-col border-r border-white/5 bg-slate-950 px-5 py-6 lg:flex">
           <div className="mb-8">
             <p className="text-xs uppercase tracking-[0.2em] text-sky-300">
               Provider Console
@@ -520,7 +520,7 @@ const AdminDashboard = () => {
                 className={`flex w-full items-center justify-between rounded-2xl px-4 py-3 text-sm font-semibold transition ${
                   activePage === item
                     ? "bg-sky-400/20 text-white"
-                    : "text-slate-300 hover:bg-white/5"
+                    : "text-slate-300 hover:bg-slate-900/40"
                 }`}
               >
                 <span>{item}</span>
@@ -528,13 +528,13 @@ const AdminDashboard = () => {
               </button>
             ))}
           </nav>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-xs text-slate-400">
+          <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-4 text-xs text-slate-400">
             Demo mode: All actions are read-only.
           </div>
         </aside>
 
         <div className="flex flex-1 flex-col">
-          <header className="flex items-center justify-between border-b border-white/5 bg-slate-950/80 px-6 py-4">
+          <header className="flex items-center justify-between border-b border-white/5 bg-slate-950/95 px-6 py-4">
             <div>
               <h2 className="text-xl font-semibold text-white">{activePage}</h2>
               <p className="text-xs text-slate-400">
@@ -548,7 +548,7 @@ const AdminDashboard = () => {
           </header>
 
           <main className="flex-1 px-6 py-8">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <div className="rounded-3xl border border-white/10 bg-slate-900/40 p-6">
               {renderPage()}
               {/* TODO: Connect these panels to real API + WebSocket data streams. */}
             </div>

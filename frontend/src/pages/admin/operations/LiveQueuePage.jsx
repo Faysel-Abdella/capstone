@@ -48,46 +48,46 @@ const LiveQueuePage = () => {
   );
 
   const statusStyles = {
-    Waiting: "bg-amber-50 text-amber-700 border-amber-200",
-    Called: "bg-emerald-50 text-emerald-700 border-emerald-200",
-    Delayed: "bg-rose-50 text-rose-700 border-rose-200",
+    Waiting: "bg-amber-500/15 text-amber-300 border-amber-400/30",
+    Called: "bg-emerald-500/15 text-emerald-300 border-emerald-400/30",
+    Delayed: "bg-rose-500/15 text-rose-300 border-rose-400/30",
   };
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-semibold text-slate-900">
+      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-900/70 to-blue-950/70 p-6 shadow-lg shadow-slate-950/40">
+        <h2 className="text-2xl font-semibold text-white">
           Live Queue Operations
         </h2>
-        <p className="mt-2 text-sm text-slate-500">
+        <p className="mt-2 text-sm text-slate-300">
           FIFO ordering is enforced at the queue engine. Operators act on the
           live queue state streamed through WebSockets.
         </p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
-          <button className="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white">
+          <button className="rounded-full bg-sky-500/20 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-950/40">
             Call Next
           </button>
-          <button className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700">
+          <button className="rounded-full border border-white/10 bg-slate-950/40 px-4 py-2 text-sm font-semibold text-slate-200">
             Mark Served
           </button>
-          <button className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700">
+          <button className="rounded-full border border-white/10 bg-slate-950/40 px-4 py-2 text-sm font-semibold text-slate-200">
             Mark No-Show
           </button>
           <button
-            className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-400"
+            className="rounded-full border border-white/10 bg-slate-950/40 px-4 py-2 text-sm font-semibold text-slate-400"
             disabled
           >
             Escalate (demo)
           </button>
-          <Pill className="border-slate-200 bg-slate-100 text-slate-700">
+          <Pill className="border-white/10 bg-slate-950/60 text-slate-200">
             FIFO enforced
           </Pill>
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-        <table className="min-w-full divide-y divide-slate-200">
-          <thead className="bg-slate-50">
+      <div className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 shadow-lg shadow-slate-950/40">
+        <table className="min-w-full divide-y divide-white/10">
+          <thead className="bg-slate-950/80">
             <tr>
               {[
                 "Ticket ID",
@@ -100,19 +100,17 @@ const LiveQueuePage = () => {
               ].map((column) => (
                 <th
                   key={column}
-                  className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
+                  className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-300"
                 >
                   {column}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-200">
+          <tbody className="divide-y divide-white/10">
             {data.queue.map((row) => (
-              <tr key={row.id} className="text-sm text-slate-700">
-                <td className="px-4 py-4 font-semibold text-slate-900">
-                  {row.id}
-                </td>
+              <tr key={row.id} className="text-sm text-slate-200">
+                <td className="px-4 py-4 font-semibold text-white">{row.id}</td>
                 <td className="px-4 py-4">{row.name}</td>
                 <td className="px-4 py-4">{row.entry}</td>
                 <td className="px-4 py-4">{row.service}</td>
@@ -128,11 +126,11 @@ const LiveQueuePage = () => {
                 </td>
                 <td className="px-4 py-4">
                   {row.priority === "High" ? (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-rose-50 px-3 py-1 text-xs font-semibold text-rose-700">
+                    <span className="inline-flex items-center gap-1 rounded-full border border-rose-400/30 bg-rose-500/15 px-3 py-1 text-xs font-semibold text-rose-300">
                       <AlertTriangle size={12} /> Priority
                     </span>
                   ) : (
-                    <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
+                    <span className="rounded-full border border-white/10 bg-slate-900/70 px-3 py-1 text-xs font-semibold text-slate-200">
                       Standard
                     </span>
                   )}

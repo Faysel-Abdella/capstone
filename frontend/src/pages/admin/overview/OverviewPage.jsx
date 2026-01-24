@@ -61,18 +61,18 @@ const OverviewPage = () => {
 
   return (
     <div className="space-y-8">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-900/70 to-blue-950/70 p-6 shadow-lg shadow-slate-950/40">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900">
+            <h2 className="text-2xl font-semibold text-white">
               Command Center Overview
             </h2>
-            <p className="mt-2 text-sm text-slate-500">
+            <p className="mt-2 text-sm text-slate-300">
               This module aggregates live queue telemetry and operational KPIs
               to guide staffing decisions and SLA compliance.
             </p>
           </div>
-          <Pill className="border-emerald-200 bg-emerald-100 text-emerald-700">
+          <Pill className="border-emerald-400/30 bg-emerald-500/15 text-emerald-300">
             Operational
           </Pill>
         </div>
@@ -83,9 +83,9 @@ const OverviewPage = () => {
           <MetricCard
             key={kpi.label}
             {...kpi}
-            className="border-slate-200 bg-white"
-            labelClassName="text-slate-500"
-            valueClassName="text-slate-900"
+            className="border-white/10"
+            labelClassName="text-slate-300"
+            valueClassName="text-white"
             noteClassName="text-slate-400"
           />
         ))}
@@ -95,19 +95,19 @@ const OverviewPage = () => {
         title="Queue Volume vs Service Completion"
         subtitle="Live telemetry updated every 5 minutes"
         badge="Real-Time"
-        className="border-slate-200 bg-white"
-        titleClassName="text-slate-900"
-        subtitleClassName="text-slate-500"
+        className="border-white/10"
+        titleClassName="text-white"
+        subtitleClassName="text-slate-300"
       >
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data.queueTrend}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-            <XAxis dataKey="time" stroke="#64748b" />
-            <YAxis stroke="#64748b" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
+            <XAxis dataKey="time" stroke="#94a3b8" />
+            <YAxis stroke="#94a3b8" />
             <Tooltip
               contentStyle={{
-                background: "#ffffff",
-                border: "1px solid #e2e8f0",
+                background: "#0f172a",
+                border: "1px solid #334155",
               }}
             />
             <Line
@@ -130,15 +130,15 @@ const OverviewPage = () => {
         {data.systemStatus.map((status) => (
           <div
             key={status.label}
-            className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            className="rounded-2xl border border-white/10 bg-slate-950/70 p-5 shadow-lg shadow-slate-950/40"
           >
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
               {status.label}
             </p>
-            <p className="mt-2 text-xl font-semibold text-slate-900">
+            <p className="mt-2 text-xl font-semibold text-white">
               {status.value}
             </p>
-            <p className="mt-2 text-sm text-slate-500">{status.detail}</p>
+            <p className="mt-2 text-sm text-slate-300">{status.detail}</p>
           </div>
         ))}
       </div>
