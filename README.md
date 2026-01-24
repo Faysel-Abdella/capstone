@@ -65,10 +65,14 @@ The backend runs on `http://localhost:4000` and the frontend runs on the Vite de
 
 ## 8. Team Members
 
-- Fasil Hawultie — Project Lead, System Architecture
-- [Name] — Backend Development, Real-time Services
-- Nanati Asamnew — Frontend Development, UI/UX
-- [Name] — Research & Evaluation, Documentation
+- Fasil Hawultie
+- Nanati Asamnew
+- Faysel Abdella
+- Ifnan Faysel
+- Dejene Samuel
+- Debela Berako
+- Abdulwahid Hussen
+
 
 ## 9. License
 
