@@ -243,9 +243,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-lg font-semibold">
-              Live Queue Snapshot (Demo)
-            </h3>
+            <h3 className="text-lg font-semibold">Live Queue Snapshot</h3>
             <p className="mt-2 text-sm text-slate-300">
               Preview of the user-facing queue status panel.
             </p>
@@ -482,7 +480,7 @@ const LandingPage = () => {
         </div>
       </Section>
 
-      <Section
+      {/* <Section
         id="team"
         eyebrow="Team & Roles"
         title="A senior project team with defined responsibilities."
@@ -500,7 +498,7 @@ const LandingPage = () => {
             </div>
           ))}
         </div>
-      </Section>
+      </Section> */}
 
       <Section
         id="research"
