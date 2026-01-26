@@ -4,25 +4,21 @@
 
 Manual queuing remains common in Ethiopian SMEs, leading to long waits, unclear service order, and limited visibility for customers and providers. Werefa is a hybrid queue management system that supports both remote users and walk-in customers, enabling orderly service delivery with real-time updates. The prototype also introduces service discovery to help customers identify available providers and offerings.
 
-## 2. Key Features
+##2. Feature Set
+Hybrid FIFO: A "remote + physical" queue logic that keeps everyone in their rightful spot.
+Socket-Driven Sync: No manual refreshing; the UI updates in real-time as the queue moves.
+Provider Console: "Call Next" functionality with a high-level view of the current waitlist.
+WMA Estimation: Moving away from "hard-coded" wait times toward a weighted moving average for better accuracy.
+Transactional Feedback: Conceptualizing a system where ratings are triggered by successful events.
 
-- Hybrid FIFO queue (remote + walk-in)
-- Real-time queue synchronization using WebSockets
-- Provider dashboard (call next, view live queue)
-- Adaptive wait-time estimation (prototype uses fixed average, final system uses weighted moving average)
-- Transaction-based rating system (conceptual in prototype)
+##3.Technology Profile
+Stack: JavaScript-heavy (React, Node, Express).
+Streaming: Socket.io handles the event-driven updates.
+Persistence: Prototyping in RAM; migrating to a relational Postgres setup for the final build.
+DevOps: Docker-ready for easy "write once, run anywhere" capability.
 
-## 3. Technology Stack
-
-- Frontend: React.js
-- Backend: Node.js + Express
-- Real-time: Socket.io (WebSockets)
-- Database: In-memory (prototype), PostgreSQL (production)
-- Deployment: Docker, cloud hosting (planned)
-
-## 4. System Architecture
-
-Werefa follows a 3-tier modular monolithic architecture. The client layer provides the customer and provider interfaces, the application layer encapsulates queue logic and real-time synchronization, and the persistence layer handles data storage. In the final version, concurrency and ordering will be enforced using database transactions to preserve FIFO consistency under load.
+##4. System Design
+Werefa uses a 3-tier modular monolithic approach to balance simplicity with separation of concerns. The backend encapsulates the queue logic and ensures that even with massive traffic, the sequence of users remains consistent. By using database transactions in the final version, we guarantee ACID compliance for every person joining or leaving the line, effectively preventing "race conditions" in the FIFO logic.
 
 ## 5. Prototype Scope & Limitations
 
